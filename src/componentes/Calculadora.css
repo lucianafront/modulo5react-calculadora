@@ -28,4 +28,13 @@ button:hover{
     display: flex;
     justify-content: right;
     font-size:3.5em;
+    margin-top: 0px;
+}
+
+.parcialCss{
+    color: white;
+    display: flex;
+    justify-content: right;
+    font-size:2em;
+    margin-bottom: 5px;
 }
