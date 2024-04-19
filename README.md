@@ -1,4 +1,4 @@
-# Título do projeto
+# Calculadora em React
 
 Um parágrafo da descrição do projeto vai aqui
 
