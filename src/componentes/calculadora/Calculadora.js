@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import Container from "@mui/material/Container";
 import { Box } from "@mui/system";
 import Utils from "../shared/Utils";
-import "./App.css";
+import "./Calculadora.css";
+import Botao from "../botao/Botao";
+import Visor from "../visor/Visor";
+
 
 export default function Calculadora() {
   const [num, setNum] = useState(0);
@@ -146,29 +149,41 @@ export default function Calculadora() {
       <Box m={5} />
       <Container maxWidth="xs">
         <div className="wrapper">
-          <h3 className={`parcialCss ${erro ? "error" : ""}`}>{parcial}</h3>
+        <Visor erro={erro} parcial={parcial} num={num} />
+          {/* <h3 className={`parcialCss ${erro ? "error" : ""}`}>{parcial}</h3>
           <h1 className={`resultado ${erro ? "error" : ""}`}>
             {num.toString().replace(".", ",")}
-          </h1>
-          <button onClick={clear}>AC</button>
+          </h1> */}
+   
+
+          <Botao  onClick={clear} value="AC"/>
+          {/* <button onClick={clear}>AC</button> */}
           <button onClick={changeSign}>+/-</button>
           <button onClick={porcetage}>%</button>
           <button className="orange" onClick={operatorHadler} value="/">
             /
           </button>
-          <button className="gray" onClick={inputNum} value={7}>
+          {[7, 8, 9].map((num) => (
+            <Botao className ="gray" onClick={inputNum} value={num}/>
+
+            ))}
+          {/* <button className="gray" onClick={inputNum} value={7}>
             7
-          </button>
-          <button className="gray" onClick={inputNum} value={8}>
+          </button> */}
+          {/* <button className="gray" onClick={inputNum} value={8}>
             8
           </button>
           <button className="gray" onClick={inputNum} value={9}>
             9
-          </button>
+          </button> */}
           <button className="orange" onClick={operatorHadler} value="X">
             X
           </button>
-          <button className="gray" onClick={inputNum} value={4}>
+
+          {[4, 5, 6].map((num) => (
+            <Botao className ="gray" onClick={inputNum} value={num}/>
+          ))}
+          {/* <button className="gray" onClick={inputNum} value={4}>
             4
           </button>
           <button className="gray" onClick={inputNum} value={5}>
@@ -176,11 +191,17 @@ export default function Calculadora() {
           </button>
           <button className="gray" onClick={inputNum} value={6}>
             6
-          </button>
+          </button> */}
           <button className="orange" onClick={operatorHadler} value="-">
             -
           </button>
-          <button className="gray" onClick={inputNum} value={1}>
+
+          {[1, 2, 3].map((num) => (
+            <Botao className ="gray" onClick={inputNum} value={num}/>
+
+          ))}
+
+          {/* <button className="gray" onClick={inputNum} value={1}>
             1
           </button>
           <button className="gray" onClick={inputNum} value={2}>
@@ -188,10 +209,11 @@ export default function Calculadora() {
           </button>
           <button className="gray" onClick={inputNum} value={3}>
             3
-          </button>
-          <button className="orange" onClick={operatorHadler} value="+">
+          </button> */}
+          <Botao className ="orange" onClick={operatorHadler} value="+"/>
+          {/* <button className="orange" onClick={operatorHadler} value="+">
             +
-          </button>
+          </button> */}
           <button className="gray" onClick={inputNum} value={0}>
             0
           </button>

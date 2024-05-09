@@ -1,5 +1,5 @@
 import './App.css';
-import Calculadora from "./componentes/calculadora/App";
+import Calculadora from "./componentes/calculadora/Calculadora";
 
 
 
